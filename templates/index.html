@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acuario Profesional | Galería</title>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body { 
+            background-color: #0b0f14; 
+            color: #ffffff; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .titulo-gigante { 
+            font-weight: 900; 
+            letter-spacing: 15px; 
+            opacity: 0.9; 
+            text-transform: uppercase;
+        }
+        .tarjeta-pez { 
+            background: #161d26; 
+            border: 1px solid #1f2937; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            transition: transform 0.3s ease;
+        }
+        
+        .tarjeta-pez:hover {
+            border-color: #0dcaf0;
+            transform: scale(1.02);
+        }
+        .img-pez {
+            height: 300px;
+            object-fit: cover; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+    
+    <div class="card tarjeta-pez p-4 mb-5 border-secondary" data-aos="fade-down">
+        <h4 class="text-center mb-4 text-info">Registrar Nuevo Ejemplar</h4>
+        <form action="/registrar" method="POST" class="row g-3">
+            <div class="col-md-4">
+                <label class="small text-secondary">Nombre Común</label>
+                <input type="text" name="nombre_del_pez" class="form-control bg-dark text-white border-secondary" placeholder="Ej: Pez Payaso" required>
+            </div>
+            <div class="col-md-4">
+                <label class="small text-secondary">Descripción</label>
+                <input type="text" name="descripcion_del_pez" class="form-control bg-dark text-white border-secondary" placeholder="Ej: Pez de arrecife..." required>
+            </div>
+            <div class="col-md-4">
+                <label class="small text-secondary">URL de la Imagen</label>
+                <input type="text" name="url_de_la_imagen" class="form-control bg-dark text-white border-secondary" placeholder="http://imagen.jpg" required>
+            </div>
+            <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn btn-outline-info px-5">Añadir al Sistema</button>
+            </div>
+        </form>
+    </div>
+
+    <h1 class="titulo-gigante text-center my-5" data-aos="zoom-in">Peces</h1>
+    
+    <div class="row">
+        {% for cada_pez in peces %}
+        <div class="col-md-6 mb-4">
+            <div class="card tarjeta-pez text-white shadow-lg h-100" data-aos="fade-up">
+                <img src="{{ cada_pez.imagen }}" class="card-img-top img-pez" alt="Foto de {{ cada_pez.nombre }}">
+                <div class="card-body text-center">
+                    
+                    <h3 class="card-title text-info">{{ cada_pez.nombre }}</h3>
+                    <p class="card-text text-secondary italic">{{ cada_pez.descripcion }}</p>
+                    <a href="/eliminar/{{ cada_pez.id }}" class="btn btn-sm btn-outline-danger mt-3">Eliminar Registro</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div> <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+   
+    AOS.init({
+        duration: 1200, 
+        once: false     
+    });
+</script>
+
+</body>
+</html>
