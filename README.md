@@ -14,3 +14,9 @@ Tecnologías utilizadas
 - Flask-SQLAlchemy (Base de datos)
 - Jinja2 (Templates)
 - AOS Library (Animaciones)
+
+Nota:
+Este pagina fue hecha desde un entorno virtual para evitar problemas a futuro con otros proyectos que sigo desarrollando, ademas de que ya ceunat con todo lo que necesita la pagina para se usada por lo que no hara falta instalar mas cosas.
+
+👨‍💻 Autor:
+Heber Gabriel Mancilla López
