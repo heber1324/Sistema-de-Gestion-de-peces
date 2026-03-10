@@ -16,7 +16,7 @@ Tecnologías utilizadas
 - AOS Library (Animaciones)
 
 Nota:
-Este pagina fue hecha desde un entorno virtual para evitar problemas a futuro con otros proyectos que sigo desarrollando, ademas de que ya ceunat con todo lo que necesita la pagina para se usada por lo que no hara falta instalar mas cosas.
+Este pagina fue hecha desde un entorno virtual para evitar problemas a futuro con otros proyectos que sigo desarrollando, ademas de que ya cuenta con todo lo que necesita la pagina para ser usada por lo que no hara falta instalar mas cosas como librerias.
 
 👨‍💻 Autor:
 Heber Gabriel Mancilla López
